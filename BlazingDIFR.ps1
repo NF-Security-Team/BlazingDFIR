@@ -159,13 +159,32 @@ function DIFRHost {
 			
 			#ENUMERATION SECTION	
 			Write-Host "Enumeration Sections has started...";
+			### System infos ###
+			systeminfo > C:\DFIR\SysInfos.txt;
+			wmic csproduct get name > C:\DFIR\csproduct.txt;
+			wmic bios get serialnumber > C:\DFIR\BiosSerial.txt;
 			### Shares infos ###			
 			wmic share list brief > C:\DFIR\SharesList.txt;
+			net use > C:\DFIR\netUse.txt;
+			net session > C:\DFIR\netSession.txt;
+			net view \\127.0.0.1 > C:\DFIR\netView.txt;
 			Write-Host "Shares infos gathered!";
 			### Process infos ###
-			wmic process list >  C:\DFIR\ProcessList.txt;
+			wmic process list > C:\DFIR\ProcessList.txt;
+			wmic process list status > C:\DFIR\ProcessListStatus.txt;
+			wmic process list memory > C:\DFIR\ProcessListMemory.txt;
 			Get-Process > C:\DFIR\Get_Process.txt
+			wmic job list brief > C:\DFIR\WMIjobList.txt;
 			Write-Host "Process infos gathered!";
+			### Autostart infos ###
+			wmic startup list brief > C:\DFIR\AutostartData.txt;
+			wmic ntdomain list brief >> C:\DFIR\AutostartData.txt;
+			schtasks > C:\DFIR\schtasks.txt;
+			Copy-Item -Path "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup" -Destination "C:\DFIR\Startup_1" -Recurse;			
+			Copy-Item -Path "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs" -Destination "C:\DFIR\Startup_2" -Recurse;
+			Copy-Item -Path "C:\Windows\System32\Tasks" -Destination "C:\DFIR\Sys32Tasks" -Recurse;	
+			Copy-Item -Path "C:\Windows\Tasks" -Destination "C:\DFIR\WinTasks" -Recurse;	
+			Write-Host "Some autostart infos gathered!";
 			### Domain infos ###
 			wmic ntdomain list >  C:\DFIR\NtdomainList.txt;
 			wmic useraccount list >  C:\DFIR\UseraccountList.txt;
@@ -180,23 +199,55 @@ function DIFRHost {
 			Get-WmiObject win32_processor >> C:\DFIR\CPUcache.txt;	
 			Write-Host "CPU Cache infos gathered!";
 			### Network Data ###
+			ipconfig /allcompartments /all > C:\DFIR\NetworkGeneralData.txt;
+			netstat -naob > C:\DFIR\NetStats.txt;
+			netstat -nr  >> C:\DFIR\NetStats.txt;
+			netstat -vb >> C:\DFIR\NetStats.txt;
+			nbtstat -S > C:\DFIR\nbtstat.txt;
+			route print > C:\DFIR\routePrint.txt;
+			apr -a > C:\DFIR\Arp.txt;
+			netsh wlan show all > C:\DFIR\netshAll.txt;
 			Get-NetRoute | Format-List -Property * > C:\DFIR\NetRoute.txt;	
 			Get-NetNeighbor | Format-List -Property * > C:\DFIR\ARPcache.txt;	
+			wmic nicconfig get description,IPAddress,MACaddress > C:\DFIR\NICconfig.txt;	
 			Write-Host "Network Data gathered!";
+			### DNS infos ###
+			ipconfig /displaydns > C:\DFIR\DNSInfos.txt;
+			Copy-Item -Path "%SystemRoot%\System32\Drivers\etc\hosts" -Destination "C:\DFIR\hosts";
+			Write-Host "DNS INFOs Data gathered!";
 			### OS Specifics ###
 			wmic os LIST Full > C:\DFIR\OSinfo.txt;
 			wmic computersystem LIST full >> C:\DFIR\OSinfo.txt;
 			Write-Host "OS Specifics gathered!";
+			### Service Infos ###
+			net start > C:\DFIR\netStart.txt;
+			tasklist > C:\DFIR\tasklist.txt;
+			tasklist /svc > C:\DFIR\tasklistSVC.txt;
+			wmic service list config > C:\DFIR\servicesConfig.txt;
+			Write-Host "Service Data gathered!";
 			### Peripherals ###
 			wmic path Win32_PnPdevice > C:\DFIR\OSinfo.txt;
-			Write-Host "Peripherals gathered!";
+			Write-Host "Peripherals Data gathered!";
+			### Patches ###
+			wmic qfe list > C:\DFIR\qfeList.txt;
+			wmic computersystem get manufacturer > C:\DFIR\deviceManufacturer.txt;
+			cipher /y > C:\DFIR\cypheredEFS.txt;
+			Write-Host "Patches Data gathered!";
 			### Windows Event Logs ###
-			Copy-Item -Path "C:\Windows\System32\winevt\Logs" -Destination "C:\DFIR\WinevtLogs" -Recurse
+			Copy-Item -Path "C:\Windows\System32\winevt\Logs" -Destination "C:\DFIR\WinevtLogs" -Recurse;
 			Write-Host "Windows Event Logs gathered!";
+			### Windows Firewall ###
+			netsh firewall show portopening > C:\DFIR\windowsFirewall_portopening.txt;
+			netsh firewall show allowedprogram > C:\DFIR\windowsFirewall_allowedprogram.txt;
+			netsh firewall show config > C:\DFIR\windowsFirewall_config.txt;
+			Write-Host "Windows Firewall Data gathered!";
 			### Temporary Files ###
-			Copy-Item -Path $env:TEMP -Destination "C:\DFIR\userTMP" -Recurse
-			Copy-Item -Path "C:\Windows\temp" -Destination "C:\DFIR\winTMP" -Recurse
+			Copy-Item -Path $env:TEMP -Destination "C:\DFIR\userTMP" -Recurse;
+			Copy-Item -Path "C:\Windows\temp" -Destination "C:\DFIR\winTMP" -Recurse;
 			Write-Host "Temporary Files gathered!";
+			### Registry Export ###
+			reg export HKLM "C:\DFIR\HKLM.Reg" /y;
+			Write-Host "HKLM Registry gathered!";			
 			### Directory Listing and File Search ###	
 			Write-Host "Searching for password files...";			
 			wmic DATAFILE where "drive='C:' AND Name like '%password%'" GET Name,readable,size /VALUE > C:\DFIR\PasswordFiles.txt;	
@@ -454,6 +505,29 @@ $_secureCreds = New-Object System.Management.Automation.PSCredential($_username,
 
 if($local -eq $true)
 {	
+			#####CSHARE CREATION###
+			#Test Directories
+			$_pathsExists = Test-Path  $_localPath;
+
+			#Create Directories if $_pathsExists returns $false
+			if($_pathsExists -eq $false)
+			{
+				New-Item -ItemType Directory -Force -Path $_localPath;	
+				#Share Base Directory and set IR USER full control
+				$UserId = "Everyone"; #$_domain +"\" + $_username
+				New-SmbShare -Path $_localPath -Name IR_Data -FullAccess $UserId;
+				$Acl = Get-Acl $_localPath;
+				$NewAccessRule = New-Object system.security.accesscontrol.filesystemaccessrule("Everyone","FullControl","Allow");
+				$Acl.SetAccessRule($NewAccessRule);
+				Set-Acl $_localPath $Acl;
+				Write-Host "Local Share " $_localPath  " has been created and shared correctly!";
+			}
+			else
+			{
+				Write-Host "Local Share " $_localPath  " already exists!";
+			}
+			#####CSHARE CREATION ends###
+			
 			Write-Host "In the process you will see some errors (usually in red) don't worry it depends on the remote system type and configurations.";
 			#Collection ZIP File
 			$_remoteEdp = $env:computername;
@@ -479,7 +553,7 @@ if($local -eq $true)
 			
 			#AUTORUNS SECTION
 			Write-Host "Starting comprehensive autoruns collection for all users...";	
-			Start-Process -NoNewWindow -FilePath ".\tools\autoruns_collector.bat";
+			Start-Process -NoNewWindow -FilePath ".\tools\autoruns_localcollector.bat";
 			Write-Host "Success!";	
 			#Wait time SECTION
 			Write-Host "I'm waiting to let memory acquisition process end successfully...";		
@@ -494,13 +568,32 @@ if($local -eq $true)
 			
 			#ENUMERATION SECTION	
 			Write-Host "Enumeration Sections has started...";
+			### System infos ###
+			systeminfo > C:\DFIR\SysInfos.txt;
+			wmic csproduct get name > C:\DFIR\csproduct.txt;
+			wmic bios get serialnumber > C:\DFIR\BiosSerial.txt;
 			### Shares infos ###			
 			wmic share list brief > C:\DFIR\SharesList.txt;
+			net use > C:\DFIR\netUse.txt;
+			net session > C:\DFIR\netSession.txt;
+			net view \\127.0.0.1 > C:\DFIR\netView.txt;
 			Write-Host "Shares infos gathered!";
 			### Process infos ###
-			wmic process list >  C:\DFIR\ProcessList.txt;
+			wmic process list > C:\DFIR\ProcessList.txt;
+			wmic process list status > C:\DFIR\ProcessListStatus.txt;
+			wmic process list memory > C:\DFIR\ProcessListMemory.txt;
 			Get-Process > C:\DFIR\Get_Process.txt
+			wmic job list brief > C:\DFIR\WMIjobList.txt;
 			Write-Host "Process infos gathered!";
+			### Autostart infos ###
+			wmic startup list brief > C:\DFIR\AutostartData.txt;
+			wmic ntdomain list brief >> C:\DFIR\AutostartData.txt;
+			schtasks > C:\DFIR\schtasks.txt;
+			Copy-Item -Path "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup" -Destination "C:\DFIR\Startup_1" -Recurse;			
+			Copy-Item -Path "%userprofile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs" -Destination "C:\DFIR\Startup_2" -Recurse;
+			Copy-Item -Path "C:\Windows\System32\Tasks" -Destination "C:\DFIR\Sys32Tasks" -Recurse;	
+			Copy-Item -Path "C:\Windows\Tasks" -Destination "C:\DFIR\WinTasks" -Recurse;	
+			Write-Host "Some autostart infos gathered!";
 			### Domain infos ###
 			wmic ntdomain list >  C:\DFIR\NtdomainList.txt;
 			wmic useraccount list >  C:\DFIR\UseraccountList.txt;
@@ -515,34 +608,59 @@ if($local -eq $true)
 			Get-WmiObject win32_processor >> C:\DFIR\CPUcache.txt;	
 			Write-Host "CPU Cache infos gathered!";
 			### Network Data ###
+			ipconfig /allcompartments /all > C:\DFIR\NetworkGeneralData.txt;
+			netstat -naob > C:\DFIR\NetStats.txt;
+			netstat -nr  >> C:\DFIR\NetStats.txt;
+			netstat -vb >> C:\DFIR\NetStats.txt;
+			nbtstat -S > C:\DFIR\nbtstat.txt;
+			route print > C:\DFIR\routePrint.txt;
+			apr -a > C:\DFIR\Arp.txt;
+			netsh wlan show all > C:\DFIR\netshAll.txt;
 			Get-NetRoute | Format-List -Property * > C:\DFIR\NetRoute.txt;	
 			Get-NetNeighbor | Format-List -Property * > C:\DFIR\ARPcache.txt;	
+			wmic nicconfig get description,IPAddress,MACaddress > C:\DFIR\NICconfig.txt;	
 			Write-Host "Network Data gathered!";
+			### DNS infos ###
+			ipconfig /displaydns > C:\DFIR\DNSInfos.txt;
+			Copy-Item -Path "%SystemRoot%\System32\Drivers\etc\hosts" -Destination "C:\DFIR\hosts";
+			Write-Host "DNS INFOs Data gathered!";
 			### OS Specifics ###
-			try
-			{
-				wmic os LIST Full > C:\DFIR\OSinfo.txt;
-				wmic computersystem LIST full >> C:\DFIR\OSinfo.txt;
-				Write-Host "OS Specifics gathered!";
-			}
-			catch{
-				Write-Host "Error! OS Specifics not gathered correctly...";
-			}
-			
+			wmic os LIST Full > C:\DFIR\OSinfo.txt;
+			wmic computersystem LIST full >> C:\DFIR\OSinfo.txt;
+			Write-Host "OS Specifics gathered!";
+			### Service Infos ###
+			net start > C:\DFIR\netStart.txt;
+			tasklist > C:\DFIR\tasklist.txt;
+			tasklist /svc > C:\DFIR\tasklistSVC.txt;
+			wmic service list config > C:\DFIR\servicesConfig.txt;
+			Write-Host "Service Data gathered!";
 			### Peripherals ###
 			wmic path Win32_PnPdevice > C:\DFIR\OSinfo.txt;
-			Write-Host "Peripherals gathered!";
+			Write-Host "Peripherals Data gathered!";
+			### Patches ###
+			wmic qfe list > C:\DFIR\qfeList.txt;
+			wmic computersystem get manufacturer > C:\DFIR\deviceManufacturer.txt;
+			cipher /y > C:\DFIR\cypheredEFS.txt;
+			Write-Host "Patches Data gathered!";
 			### Windows Event Logs ###
-			Copy-Item -Path "C:\Windows\System32\winevt\Logs" -Destination "C:\DFIR\WinevtLogs" -Recurse
+			Copy-Item -Path "C:\Windows\System32\winevt\Logs" -Destination "C:\DFIR\WinevtLogs" -Recurse;
 			Write-Host "Windows Event Logs gathered!";
+			### Windows Firewall ###
+			netsh firewall show portopening > C:\DFIR\windowsFirewall_portopening.txt;
+			netsh firewall show allowedprogram > C:\DFIR\windowsFirewall_allowedprogram.txt;
+			netsh firewall show config > C:\DFIR\windowsFirewall_config.txt;
+			Write-Host "Windows Firewall Data gathered!";
 			### Temporary Files ###
-			Copy-Item -Path $env:TEMP -Destination "C:\DFIR\userTMP" -Recurse
-			Copy-Item -Path "C:\Windows\temp" -Destination "C:\DFIR\winTMP" -Recurse
+			Copy-Item -Path $env:TEMP -Destination "C:\DFIR\userTMP" -Recurse;
+			Copy-Item -Path "C:\Windows\temp" -Destination "C:\DFIR\winTMP" -Recurse;
 			Write-Host "Temporary Files gathered!";
+			### Registry Export ###
+			reg export HKLM "C:\DFIR\HKLM.Reg" /y;
+			Write-Host "HKLM Registry gathered!";			
 			### Directory Listing and File Search ###	
-			Write-Host "Searching for password files... [It can take several minutes... Hold on and trust the developers :) ]";			
+			Write-Host "Searching for password files...";			
 			wmic DATAFILE where "drive='C:' AND Name like '%password%'" GET Name,readable,size /VALUE > C:\DFIR\PasswordFiles.txt;	
-			Write-Host "Done!";					
+			Write-Host "Done!";						
 			### AV products listing ###
 			try
 			{
