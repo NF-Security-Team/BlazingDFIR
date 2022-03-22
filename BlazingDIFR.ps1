@@ -173,7 +173,7 @@ function DIFRHost {
 			wmic process list > C:\DFIR\ProcessList.txt;
 			wmic process list status > C:\DFIR\ProcessListStatus.txt;
 			wmic process list memory > C:\DFIR\ProcessListMemory.txt;
-			Get-Process > C:\DFIR\Get_Process.txt
+			Get-Process > C:\DFIR\Get_Process.txt;
 			wmic job list brief > C:\DFIR\WMIjobList.txt;
 			Write-Host "Process infos gathered!";
 			### Autostart infos ###
@@ -250,8 +250,10 @@ function DIFRHost {
 			Write-Host "HKLM Registry gathered!";			
 			### Directory Listing and File Search ###	
 			Write-Host "Searching for password files...";			
-			wmic DATAFILE where "drive='C:' AND Name like '%password%'" GET Name,readable,size /VALUE > C:\DFIR\PasswordFiles.txt;	
-			Write-Host "Done!";					
+			wmic DATAFILE where "drive='C:' AND Name like '%password%'" GET Name,readable,size /VALUE > C:\DFIR\PasswordFiles.txt;
+			Write-Host "Done!";
+			
+			
 			### AV products listing ###
 			try
 			{
@@ -614,7 +616,7 @@ if($local -eq $true)
 			netstat -vb >> C:\DFIR\NetStats.txt;
 			nbtstat -S > C:\DFIR\nbtstat.txt;
 			route print > C:\DFIR\routePrint.txt;
-			apr -a > C:\DFIR\Arp.txt;
+			arp -a > C:\DFIR\Arp.txt;
 			netsh wlan show all > C:\DFIR\netshAll.txt;
 			Get-NetRoute | Format-List -Property * > C:\DFIR\NetRoute.txt;	
 			Get-NetNeighbor | Format-List -Property * > C:\DFIR\ARPcache.txt;	
