@@ -287,8 +287,7 @@ function DIFRHost {
 				}
 			}while($completed -eq $false)
 			
-		};
-		
+		};	
 		
 		#Disconnect & Rmeove Sessions
 		Get-PSSession | Disconnect-PSSession;
