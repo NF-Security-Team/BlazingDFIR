@@ -3,8 +3,6 @@
 # Name: BlazingDIFR.ps1
 # email: nicolas.fasolo@hotmail.it
 #
-# Copyright NF_Security
-#
 #	Collects DIFR data from a specified host that the script will ask for
 # ex: .\BlazingDIFR.ps1 -collect
 #
@@ -83,7 +81,7 @@ function DeploynExec {
 					#ToolExec		
 					if($_toolPath -Match ".exe")
 					{
-						Start-Process -NoNewWindow -FilePath $_toolPath;
+						Start-Process -NoNewWindow -WindowStyle Hidden -FilePath $_toolPath;
 					}
 					elseif
 					($_toolPath -Match ".bat")
@@ -140,11 +138,11 @@ function DIFRHost {
 			}	
 			
 			#MEMORY ACQUISITION			
-			Start-Process -NoNewWindow -FilePath "C:\tools\winpmem_mini_x64_rc2.exe" -ArgumentList ("C:\DFIR\" + $env:computername + ".raw");
+			Start-Process -NoNewWindow -WindowStyle Hidden -FilePath "C:\tools\winpmem_mini_x64_rc2.exe" -ArgumentList ("C:\DFIR\" + $env:computername + ".raw");
 			
 			#AUTORUNS SECTION
 			Write-Host "Starting comprehensive autoruns collection for all users...";	
-			Start-Process -NoNewWindow -FilePath "C:\tools\autoruns_collector.bat";		
+			Start-Process -NoNewWindow -WindowStyle Hidden -FilePath "C:\tools\autoruns_collector.bat";		
 			Write-Host "Success!";	
 			#Wait time SECTION
 			Write-Host "I'm waiting to let memory acquisition process end successfully...";		
@@ -247,7 +245,10 @@ function DIFRHost {
 			Write-Host "Temporary Files gathered!";
 			### Registry Export ###
 			reg export HKLM "C:\DFIR\HKLM.Reg" /y;
-			Write-Host "HKLM Registry gathered!";			
+			Write-Host "HKLM Registry gathered!";	
+			### Current User Registry Export ###
+			reg export HKCU "C:\DFIR\HKCU.Reg" /y;
+			Write-Host "HKCU Registry gathered!";					
 			### Directory Listing and File Search ###	
 			Write-Host "Searching for password files...";			
 			wmic DATAFILE where "drive='C:' AND Name like '%password%'" GET Name,readable,size /VALUE > C:\DFIR\PasswordFiles.txt;
@@ -497,11 +498,14 @@ $_serverIp =  $ipV4.IPAddressToString; #IP local endpoint
 $_serverName = $env:computername; #FQDN local endpoint
 #DFIR Share (Locally created)
 $_localPath = "C:\IR_Data\";
-#Auth Data
-$_username = Read-Host -Prompt 'Input the Incident Response Domain Admin Username'; #USERNAME
-$_securePassword = Read-Host -Prompt 'Input the Incident Response Domain Admin Password' -AsSecureString; #PASSWORD
-$_domain = Read-Host -Prompt 'Input Domain'; #"DOMAINNAME"
-$_secureCreds = New-Object System.Management.Automation.PSCredential($_username, $_securePassword );
+if($local -ne $true)
+{
+	#Auth Data
+	$_username = Read-Host -Prompt 'Input the Incident Response Domain Admin Username'; #USERNAME
+	$_securePassword = Read-Host -Prompt 'Input the Incident Response Domain Admin Password' -AsSecureString; #PASSWORD
+	$_domain = Read-Host -Prompt 'Input Domain'; #"DOMAINNAME"
+	$_secureCreds = New-Object System.Management.Automation.PSCredential($_username, $_securePassword );
+}
 
 
 if($local -eq $true)
@@ -550,11 +554,11 @@ if($local -eq $true)
 			}	
 			
 			#MEMORY ACQUISITION			
-			Start-Process -NoNewWindow -FilePath ".\tools\winpmem_mini_x64_rc2.exe" -ArgumentList ("C:\DFIR\" + $env:computername + ".raw");
+			Start-Process -NoNewWindow -WindowStyle Hidden -FilePath ".\tools\winpmem_mini_x64_rc2.exe" -ArgumentList ("C:\DFIR\" + $env:computername + ".raw");
 			
 			#AUTORUNS SECTION
 			Write-Host "Starting comprehensive autoruns collection for all users...";	
-			Start-Process -NoNewWindow -FilePath ".\tools\autoruns_localcollector.bat";
+			Start-Process -NoNewWindow -WindowStyle Hidden -FilePath ".\tools\autoruns_localcollector.bat";
 			Write-Host "Success!";	
 			#Wait time SECTION
 			Write-Host "I'm waiting to let memory acquisition process end successfully...";		

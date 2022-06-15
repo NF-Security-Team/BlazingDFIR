@@ -1,0 +1,528 @@
+. 2022-06-15 08:51:44.407 --------------------------------------------------------------------------
+. 2022-06-15 08:51:44.407 WinSCP Version 5.20.3 RC (Build 12378 2022-05-17) (OS 10.0.19044 - Windows 10 Enterprise)
+. 2022-06-15 08:51:44.407 Configuration: nul
+. 2022-06-15 08:51:44.408 Log level: Normal
+. 2022-06-15 08:51:44.408 Local account: YARIX\y.nicolas.fasolo
+. 2022-06-15 08:51:44.408 Working directory: C:\GitHub\IR_AUTOMATED_Ecosystem\vel64_Yarix_Advanced
+. 2022-06-15 08:51:44.408 Process ID: 5040
+. 2022-06-15 08:51:44.415 Ancestor processes: WinSCP, powershell, cmd, explorer, ...
+. 2022-06-15 08:51:44.415 Command-line: "C:\GitHub\IR_AUTOMATED_Ecosystem\vel64_Yarix_Advanced\tools\WinSCP.exe" /console=5.20.3 /consoleinstance=_10884_118 "/log=.\WinSCP.log" "/ini=nul" "/command" "open ftp://y.nicolas.fasolo:***@download.yarix.com/" "lcd C:\" "cd /" "put PC-Nicolas.zip" "exit"
+. 2022-06-15 08:51:44.418 Time zone: Current: GMT+2, Standard: GMT+1 (ora solare Europa occidentale), DST: GMT+2 (ora legale Europa occidentale), DST Start: 27/03/2022, DST End: 30/10/2022
+. 2022-06-15 08:51:44.418 Login time: mercoledì 15 giugno 2022 08:51:44
+. 2022-06-15 08:51:44.418 --------------------------------------------------------------------------
+. 2022-06-15 08:51:44.418 Script: Retrospectively logging previous script records:
+> 2022-06-15 08:51:44.418 Script: open ftp://y.nicolas.fasolo:***@download.yarix.com/
+. 2022-06-15 08:51:44.418 --------------------------------------------------------------------------
+. 2022-06-15 08:51:44.418 Session name: y.nicolas.fasolo@download.yarix.com (Ad-Hoc site)
+. 2022-06-15 08:51:44.418 Host name: download.yarix.com (Port: 21)
+. 2022-06-15 08:51:44.418 User name: y.nicolas.fasolo (Password: Yes, Key file: No, Passphrase: No)
+. 2022-06-15 08:51:44.418 Transfer Protocol: FTP
+. 2022-06-15 08:51:44.418 Ping type: Dummy, Ping interval: 30 sec; Timeout: 15 sec
+. 2022-06-15 08:51:44.418 Disable Nagle: No
+. 2022-06-15 08:51:44.418 Proxy: None
+. 2022-06-15 08:51:44.418 Send buffer: 262144
+. 2022-06-15 08:51:44.418 UTF: Auto
+. 2022-06-15 08:51:44.418 FTPS: None [Client certificate: No]
+. 2022-06-15 08:51:44.418 FTP: Passive: Yes [Force IP: Auto]; MLSD: Auto [List all: Auto]; HOST: Auto
+. 2022-06-15 08:51:44.418 Local directory: default, Remote directory: home, Update: Yes, Cache: Yes
+. 2022-06-15 08:51:44.418 Cache directory changes: Yes, Permanent: Yes
+. 2022-06-15 08:51:44.418 Recycle bin: Delete to: No, Overwritten to: No, Bin path: 
+. 2022-06-15 08:51:44.418 Timezone offset: 0h 0m
+. 2022-06-15 08:51:44.418 --------------------------------------------------------------------------
+< 2022-06-15 08:51:44.438 Script: Connecting to download.yarix.com ...
+. 2022-06-15 08:51:44.438 Connecting to download.yarix.com ...
+. 2022-06-15 08:51:44.519 Connected with download.yarix.com. Waiting for welcome message...
+< 2022-06-15 08:51:44.537 220-FileZilla Server 0.9.60 beta
+< 2022-06-15 08:51:44.537 220 Welcome to Yarix FTP Server
+> 2022-06-15 08:51:44.537 USER y.nicolas.fasolo
+< 2022-06-15 08:51:44.553 331 Password required for y.nicolas.fasolo
+> 2022-06-15 08:51:44.553 PASS ****************
+< 2022-06-15 08:51:44.569 230 Logged on
+> 2022-06-15 08:51:44.569 SYST
+. 2022-06-15 08:51:44.583 FileZilla server detected.
+< 2022-06-15 08:51:44.583 215 UNIX emulated by FileZilla
+> 2022-06-15 08:51:44.583 FEAT
+< 2022-06-15 08:51:44.598 211-Features:
+< 2022-06-15 08:51:44.598  MDTM
+< 2022-06-15 08:51:44.598  REST STREAM
+< 2022-06-15 08:51:44.598  SIZE
+< 2022-06-15 08:51:44.598  MLST type*;size*;modify*;
+< 2022-06-15 08:51:44.598  MLSD
+< 2022-06-15 08:51:44.598  AUTH SSL
+< 2022-06-15 08:51:44.599  AUTH TLS
+< 2022-06-15 08:51:44.599  PROT
+< 2022-06-15 08:51:44.599  PBSZ
+< 2022-06-15 08:51:44.599  UTF8
+< 2022-06-15 08:51:44.599  CLNT
+< 2022-06-15 08:51:44.599  MFMT
+< 2022-06-15 08:51:44.622  EPSV
+< 2022-06-15 08:51:44.622  EPRT
+< 2022-06-15 08:51:44.622 211 End
+> 2022-06-15 08:51:44.622 CLNT WinSCP-release-5.20.3
+< 2022-06-15 08:51:44.637 200 Don't care
+> 2022-06-15 08:51:44.637 OPTS UTF8 ON
+< 2022-06-15 08:51:44.653 202 UTF8 mode is always enabled. No need to send this command.
+< 2022-06-15 08:51:44.653 Script: Connected
+. 2022-06-15 08:51:44.654 Connected
+. 2022-06-15 08:51:44.654 --------------------------------------------------------------------------
+. 2022-06-15 08:51:44.654 Using FTP protocol.
+. 2022-06-15 08:51:44.654 Doing startup conversation with host.
+< 2022-06-15 08:51:44.654 Script: Starting the session...
+> 2022-06-15 08:51:44.655 PWD
+< 2022-06-15 08:51:44.670 257 "/" is current directory.
+. 2022-06-15 08:51:44.670 Getting current directory name.
+. 2022-06-15 08:51:44.670 Startup conversation with host finished.
+< 2022-06-15 08:51:44.670 Script: Session started.
+< 2022-06-15 08:51:44.671 Script: Active session: [1] y.nicolas.fasolo@download.yarix.com
+> 2022-06-15 08:51:44.672 Script: lcd C:\
+< 2022-06-15 08:51:44.672 Script: C:\
+> 2022-06-15 08:51:44.673 Script: cd /
+. 2022-06-15 08:51:44.673 Changing directory to "/".
+> 2022-06-15 08:51:44.673 CWD /
+< 2022-06-15 08:51:44.688 250 CWD successful. "/" is current directory.
+. 2022-06-15 08:51:44.688 Getting current directory name.
+> 2022-06-15 08:51:44.688 PWD
+< 2022-06-15 08:51:44.704 257 "/" is current directory.
+< 2022-06-15 08:51:44.704 Script: /
+> 2022-06-15 08:51:44.706 Script: put PC-Nicolas.zip
+. 2022-06-15 08:51:44.706 Copying 1 files/directories to remote directory "/" - total size: 39.948
+. 2022-06-15 08:51:44.706   PrTime: Yes; PrRO: No; Rght: rw-r--r--; PrR: No (No); FnCs: N; RIC: 0100; Resume: S (102400); CalcS: No; Mask: 
+. 2022-06-15 08:51:44.706   TM: B; ClAr: No; RemEOF: No; RemBOM: No; CPS: 0; NewerOnly: No; EncryptNewFiles: Yes; ExcludeHiddenFiles: No; ExcludeEmptyDirectories: No; InclM: ; ResumeL: 0
+. 2022-06-15 08:51:44.706   AscM: *.*html; *.htm; *.txt; *.php; *.php3; *.cgi; *.c; *.cpp; *.h; *.pas; *.bas; *.tex; *.pl; *.js; .htaccess; *.xtml; *.css; *.cfg; *.ini; *.sh; *.xml
+. 2022-06-15 08:51:44.707 File: 'PC-NICOLAS.zip' [2022-06-15T06:51:19.219Z] [39948]
+. 2022-06-15 08:51:44.714 Copying "PC-NICOLAS.zip" to remote directory started.
+. 2022-06-15 08:51:44.714 Binary transfer mode selected.
+. 2022-06-15 08:51:44.714 Starting upload of C:\PC-NICOLAS.zip
+> 2022-06-15 08:51:44.714 TYPE I
+< 2022-06-15 08:51:44.729 200 Type set to I
+> 2022-06-15 08:51:44.729 PASV
+< 2022-06-15 08:51:44.745 227 Entering Passive Mode (212,19,102,132,235,202)
+> 2022-06-15 08:51:44.745 STOR PC-NICOLAS.zip
+. 2022-06-15 08:51:44.746 Connecting to 212.19.102.132:60362 ...
+< 2022-06-15 08:51:44.774 150 Opening data channel for file upload to server of "/PC-NICOLAS.zip"
+< 2022-06-15 08:51:44.844 226 Successfully transferred "/PC-NICOLAS.zip"
+> 2022-06-15 08:51:44.844 MFMT 20220615065119 PC-NICOLAS.zip
+< 2022-06-15 08:51:44.860 213 modify=20220615065119; /PC-NICOLAS.zip
+. 2022-06-15 08:51:44.860 Upload successful
+. 2022-06-15 08:51:44.861 Transfer done: 'PC-NICOLAS.zip' => '/PC-NICOLAS.zip' [39948]
+. 2022-06-15 08:51:44.861 Copying finished: Transferred: 39.948, Elapsed: 0:00:00, CPS: 257.729/s
+> 2022-06-15 08:51:44.863 Script: exit
+. 2022-06-15 08:51:44.863 Script: Exit code: 0
+. 2022-06-15 08:51:44.870 Disconnected from server
+. 2022-06-15 09:23:32.356 --------------------------------------------------------------------------
+. 2022-06-15 09:23:32.357 WinSCP Version 5.20.3 RC (Build 12378 2022-05-17) (OS 10.0.19044 - Windows 10 Enterprise)
+. 2022-06-15 09:23:32.357 Configuration: nul
+. 2022-06-15 09:23:32.357 Log level: Normal
+. 2022-06-15 09:23:32.357 Local account: YARIX\y.nicolas.fasolo
+. 2022-06-15 09:23:32.357 Working directory: C:\GitHub\IR_AUTOMATED_Ecosystem\vel64_Yarix_Advanced
+. 2022-06-15 09:23:32.357 Process ID: 5924
+. 2022-06-15 09:23:32.364 Ancestor processes: WinSCP, powershell, cmd, explorer, ...
+. 2022-06-15 09:23:32.365 Command-line: "C:\GitHub\IR_AUTOMATED_Ecosystem\vel64_Yarix_Advanced\tools\WinSCP.exe" /console=5.20.3 /consoleinstance=_9596_12 "/log=.\WinSCP.log" "/ini=nul" "/command" "open ftp://y.nicolas.fasolo:***@download.yarix.com/" "lcd C:\" "cd /" "put PC-Nicolas.zip" "exit"
+. 2022-06-15 09:23:32.365 Time zone: Current: GMT+2, Standard: GMT+1 (ora solare Europa occidentale), DST: GMT+2 (ora legale Europa occidentale), DST Start: 27/03/2022, DST End: 30/10/2022
+. 2022-06-15 09:23:32.365 Login time: mercoledì 15 giugno 2022 09:23:32
+. 2022-06-15 09:23:32.365 --------------------------------------------------------------------------
+. 2022-06-15 09:23:32.365 Script: Retrospectively logging previous script records:
+> 2022-06-15 09:23:32.365 Script: open ftp://y.nicolas.fasolo:***@download.yarix.com/
+. 2022-06-15 09:23:32.365 --------------------------------------------------------------------------
+. 2022-06-15 09:23:32.365 Session name: y.nicolas.fasolo@download.yarix.com (Ad-Hoc site)
+. 2022-06-15 09:23:32.365 Host name: download.yarix.com (Port: 21)
+. 2022-06-15 09:23:32.365 User name: y.nicolas.fasolo (Password: Yes, Key file: No, Passphrase: No)
+. 2022-06-15 09:23:32.365 Transfer Protocol: FTP
+. 2022-06-15 09:23:32.365 Ping type: Dummy, Ping interval: 30 sec; Timeout: 15 sec
+. 2022-06-15 09:23:32.365 Disable Nagle: No
+. 2022-06-15 09:23:32.365 Proxy: None
+. 2022-06-15 09:23:32.365 Send buffer: 262144
+. 2022-06-15 09:23:32.365 UTF: Auto
+. 2022-06-15 09:23:32.365 FTPS: None [Client certificate: No]
+. 2022-06-15 09:23:32.365 FTP: Passive: Yes [Force IP: Auto]; MLSD: Auto [List all: Auto]; HOST: Auto
+. 2022-06-15 09:23:32.365 Local directory: default, Remote directory: home, Update: Yes, Cache: Yes
+. 2022-06-15 09:23:32.365 Cache directory changes: Yes, Permanent: Yes
+. 2022-06-15 09:23:32.365 Recycle bin: Delete to: No, Overwritten to: No, Bin path: 
+. 2022-06-15 09:23:32.365 Timezone offset: 0h 0m
+. 2022-06-15 09:23:32.365 --------------------------------------------------------------------------
+< 2022-06-15 09:23:32.392 Script: Connecting to download.yarix.com ...
+. 2022-06-15 09:23:32.392 Connecting to download.yarix.com ...
+. 2022-06-15 09:23:32.474 Connected with download.yarix.com. Waiting for welcome message...
+< 2022-06-15 09:23:32.491 220-FileZilla Server 0.9.60 beta
+< 2022-06-15 09:23:32.491 220 Welcome to Yarix FTP Server
+> 2022-06-15 09:23:32.491 USER y.nicolas.fasolo
+< 2022-06-15 09:23:32.506 331 Password required for y.nicolas.fasolo
+> 2022-06-15 09:23:32.506 PASS ****************
+< 2022-06-15 09:23:32.522 230 Logged on
+> 2022-06-15 09:23:32.522 SYST
+. 2022-06-15 09:23:32.536 FileZilla server detected.
+< 2022-06-15 09:23:32.536 215 UNIX emulated by FileZilla
+> 2022-06-15 09:23:32.536 FEAT
+< 2022-06-15 09:23:32.556 211-Features:
+< 2022-06-15 09:23:32.556  MDTM
+< 2022-06-15 09:23:32.556  REST STREAM
+< 2022-06-15 09:23:32.556  SIZE
+< 2022-06-15 09:23:32.556  MLST type*;size*;modify*;
+< 2022-06-15 09:23:32.556  MLSD
+< 2022-06-15 09:23:32.556  AUTH SSL
+< 2022-06-15 09:23:32.556  AUTH TLS
+< 2022-06-15 09:23:32.556  PROT
+< 2022-06-15 09:23:32.556  PBSZ
+< 2022-06-15 09:23:32.556  UTF8
+< 2022-06-15 09:23:32.556  CLNT
+< 2022-06-15 09:23:32.556  MFMT
+< 2022-06-15 09:23:32.556  EPSV
+< 2022-06-15 09:23:32.556  EPRT
+< 2022-06-15 09:23:32.556 211 End
+> 2022-06-15 09:23:32.556 CLNT WinSCP-release-5.20.3
+< 2022-06-15 09:23:32.571 200 Don't care
+> 2022-06-15 09:23:32.571 OPTS UTF8 ON
+< 2022-06-15 09:23:32.585 202 UTF8 mode is always enabled. No need to send this command.
+< 2022-06-15 09:23:32.585 Script: Connected
+. 2022-06-15 09:23:32.585 Connected
+. 2022-06-15 09:23:32.585 --------------------------------------------------------------------------
+. 2022-06-15 09:23:32.585 Using FTP protocol.
+. 2022-06-15 09:23:32.586 Doing startup conversation with host.
+< 2022-06-15 09:23:32.586 Script: Starting the session...
+> 2022-06-15 09:23:32.586 PWD
+< 2022-06-15 09:23:32.613 257 "/" is current directory.
+. 2022-06-15 09:23:32.613 Getting current directory name.
+. 2022-06-15 09:23:32.613 Startup conversation with host finished.
+< 2022-06-15 09:23:32.613 Script: Session started.
+< 2022-06-15 09:23:32.613 Script: Active session: [1] y.nicolas.fasolo@download.yarix.com
+> 2022-06-15 09:23:32.614 Script: lcd C:\
+< 2022-06-15 09:23:32.614 Script: C:\
+> 2022-06-15 09:23:32.615 Script: cd /
+. 2022-06-15 09:23:32.615 Changing directory to "/".
+> 2022-06-15 09:23:32.615 CWD /
+< 2022-06-15 09:23:32.630 250 CWD successful. "/" is current directory.
+. 2022-06-15 09:23:32.630 Getting current directory name.
+> 2022-06-15 09:23:32.630 PWD
+< 2022-06-15 09:23:32.644 257 "/" is current directory.
+< 2022-06-15 09:23:32.644 Script: /
+> 2022-06-15 09:23:32.646 Script: put PC-Nicolas.zip
+. 2022-06-15 09:23:32.646 Copying 1 files/directories to remote directory "/" - total size: 114.910.198
+. 2022-06-15 09:23:32.646   PrTime: Yes; PrRO: No; Rght: rw-r--r--; PrR: No (No); FnCs: N; RIC: 0100; Resume: S (102400); CalcS: No; Mask: 
+. 2022-06-15 09:23:32.646   TM: B; ClAr: No; RemEOF: No; RemBOM: No; CPS: 0; NewerOnly: No; EncryptNewFiles: Yes; ExcludeHiddenFiles: No; ExcludeEmptyDirectories: No; InclM: ; ResumeL: 0
+. 2022-06-15 09:23:32.646   AscM: *.*html; *.htm; *.txt; *.php; *.php3; *.cgi; *.c; *.cpp; *.h; *.pas; *.bas; *.tex; *.pl; *.js; .htaccess; *.xtml; *.css; *.cfg; *.ini; *.sh; *.xml
+. 2022-06-15 09:23:32.646 File: 'PC-NICOLAS.zip' [2022-06-15T07:23:22.308Z] [114910198]
+. 2022-06-15 09:23:32.647 Copying "PC-NICOLAS.zip" to remote directory started.
+. 2022-06-15 09:23:32.647 Binary transfer mode selected.
+. 2022-06-15 09:23:32.648 Starting upload of C:\PC-NICOLAS.zip
+> 2022-06-15 09:23:32.648 TYPE I
+< 2022-06-15 09:23:32.666 200 Type set to I
+> 2022-06-15 09:23:32.666 PASV
+< 2022-06-15 09:23:32.682 227 Entering Passive Mode (212,19,102,132,236,27)
+> 2022-06-15 09:23:32.682 STOR PC-NICOLAS.zip
+. 2022-06-15 09:23:32.682 Connecting to 212.19.102.132:60443 ...
+< 2022-06-15 09:23:32.711 150 Opening data channel for file upload to server of "/PC-NICOLAS.zip"
+. 2022-06-15 09:23:33.709 Increasing send buffer from 262144 to 524288
+. 2022-06-15 09:23:34.707 Increasing send buffer from 524288 to 1048576
+< 2022-06-15 09:23:41.415 226 Successfully transferred "/PC-NICOLAS.zip"
+> 2022-06-15 09:23:41.416 MFMT 20220615072322 PC-NICOLAS.zip
+< 2022-06-15 09:23:41.431 213 modify=20220615072322; /PC-NICOLAS.zip
+. 2022-06-15 09:23:41.431 Upload successful
+. 2022-06-15 09:23:41.433 Transfer done: 'PC-NICOLAS.zip' => '/PC-NICOLAS.zip' [114910198]
+. 2022-06-15 09:23:41.433 Copying finished: Transferred: 114.910.198, Elapsed: 0:00:08, CPS: 13.077.295/s
+> 2022-06-15 09:23:41.433 Script: exit
+. 2022-06-15 09:23:41.434 Script: Exit code: 0
+. 2022-06-15 09:23:41.439 Disconnected from server
+. 2022-06-15 09:23:49.307 --------------------------------------------------------------------------
+. 2022-06-15 09:23:49.308 WinSCP Version 5.20.3 RC (Build 12378 2022-05-17) (OS 10.0.19044 - Windows 10 Enterprise)
+. 2022-06-15 09:23:49.308 Configuration: nul
+. 2022-06-15 09:23:49.308 Log level: Normal
+. 2022-06-15 09:23:49.308 Local account: YARIX\y.nicolas.fasolo
+. 2022-06-15 09:23:49.308 Working directory: C:\GitHub\IR_AUTOMATED_Ecosystem\vel64_Yarix_Advanced
+. 2022-06-15 09:23:49.308 Process ID: 7688
+. 2022-06-15 09:23:49.315 Ancestor processes: WinSCP, powershell, cmd, explorer, ...
+. 2022-06-15 09:23:49.315 Command-line: "C:\GitHub\IR_AUTOMATED_Ecosystem\vel64_Yarix_Advanced\tools\WinSCP.exe" /console=5.20.3 /consoleinstance=_14496_779 "/log=.\WinSCP.log" "/ini=nul" "/command" "open ftp://y.nicolas.fasolo:***@download.yarix.com/" "lcd C:\" "cd /" "put PC-Nicolas.zip" "exit"
+. 2022-06-15 09:23:49.315 Time zone: Current: GMT+2, Standard: GMT+1 (ora solare Europa occidentale), DST: GMT+2 (ora legale Europa occidentale), DST Start: 27/03/2022, DST End: 30/10/2022
+. 2022-06-15 09:23:49.315 Login time: mercoledì 15 giugno 2022 09:23:49
+. 2022-06-15 09:23:49.315 --------------------------------------------------------------------------
+. 2022-06-15 09:23:49.315 Script: Retrospectively logging previous script records:
+> 2022-06-15 09:23:49.315 Script: open ftp://y.nicolas.fasolo:***@download.yarix.com/
+. 2022-06-15 09:23:49.315 --------------------------------------------------------------------------
+. 2022-06-15 09:23:49.316 Session name: y.nicolas.fasolo@download.yarix.com (Ad-Hoc site)
+. 2022-06-15 09:23:49.316 Host name: download.yarix.com (Port: 21)
+. 2022-06-15 09:23:49.316 User name: y.nicolas.fasolo (Password: Yes, Key file: No, Passphrase: No)
+. 2022-06-15 09:23:49.316 Transfer Protocol: FTP
+. 2022-06-15 09:23:49.316 Ping type: Dummy, Ping interval: 30 sec; Timeout: 15 sec
+. 2022-06-15 09:23:49.316 Disable Nagle: No
+. 2022-06-15 09:23:49.316 Proxy: None
+. 2022-06-15 09:23:49.316 Send buffer: 262144
+. 2022-06-15 09:23:49.316 UTF: Auto
+. 2022-06-15 09:23:49.316 FTPS: None [Client certificate: No]
+. 2022-06-15 09:23:49.316 FTP: Passive: Yes [Force IP: Auto]; MLSD: Auto [List all: Auto]; HOST: Auto
+. 2022-06-15 09:23:49.316 Local directory: default, Remote directory: home, Update: Yes, Cache: Yes
+. 2022-06-15 09:23:49.316 Cache directory changes: Yes, Permanent: Yes
+. 2022-06-15 09:23:49.316 Recycle bin: Delete to: No, Overwritten to: No, Bin path: 
+. 2022-06-15 09:23:49.316 Timezone offset: 0h 0m
+. 2022-06-15 09:23:49.316 --------------------------------------------------------------------------
+< 2022-06-15 09:23:49.342 Script: Connecting to download.yarix.com ...
+. 2022-06-15 09:23:49.343 Connecting to download.yarix.com ...
+. 2022-06-15 09:23:49.373 Connected with download.yarix.com. Waiting for welcome message...
+< 2022-06-15 09:23:49.392 220-FileZilla Server 0.9.60 beta
+< 2022-06-15 09:23:49.392 220 Welcome to Yarix FTP Server
+> 2022-06-15 09:23:49.392 USER y.nicolas.fasolo
+< 2022-06-15 09:23:49.408 331 Password required for y.nicolas.fasolo
+> 2022-06-15 09:23:49.408 PASS ****************
+< 2022-06-15 09:23:49.424 230 Logged on
+> 2022-06-15 09:23:49.424 SYST
+. 2022-06-15 09:23:49.440 FileZilla server detected.
+< 2022-06-15 09:23:49.440 215 UNIX emulated by FileZilla
+> 2022-06-15 09:23:49.440 FEAT
+< 2022-06-15 09:23:49.455 211-Features:
+< 2022-06-15 09:23:49.455  MDTM
+< 2022-06-15 09:23:49.455  REST STREAM
+< 2022-06-15 09:23:49.455  SIZE
+< 2022-06-15 09:23:49.455  MLST type*;size*;modify*;
+< 2022-06-15 09:23:49.455  MLSD
+< 2022-06-15 09:23:49.455  AUTH SSL
+< 2022-06-15 09:23:49.455  AUTH TLS
+< 2022-06-15 09:23:49.455  PROT
+< 2022-06-15 09:23:49.455  PBSZ
+< 2022-06-15 09:23:49.455  UTF8
+< 2022-06-15 09:23:49.479  CLNT
+< 2022-06-15 09:23:49.479  MFMT
+< 2022-06-15 09:23:49.479  EPSV
+< 2022-06-15 09:23:49.479  EPRT
+< 2022-06-15 09:23:49.479 211 End
+> 2022-06-15 09:23:49.479 CLNT WinSCP-release-5.20.3
+< 2022-06-15 09:23:49.495 200 Don't care
+> 2022-06-15 09:23:49.495 OPTS UTF8 ON
+< 2022-06-15 09:23:49.510 202 UTF8 mode is always enabled. No need to send this command.
+< 2022-06-15 09:23:49.510 Script: Connected
+. 2022-06-15 09:23:49.510 Connected
+. 2022-06-15 09:23:49.511 --------------------------------------------------------------------------
+. 2022-06-15 09:23:49.511 Using FTP protocol.
+. 2022-06-15 09:23:49.511 Doing startup conversation with host.
+< 2022-06-15 09:23:49.511 Script: Starting the session...
+> 2022-06-15 09:23:49.512 PWD
+< 2022-06-15 09:23:49.526 257 "/" is current directory.
+. 2022-06-15 09:23:49.526 Getting current directory name.
+. 2022-06-15 09:23:49.526 Startup conversation with host finished.
+< 2022-06-15 09:23:49.526 Script: Session started.
+< 2022-06-15 09:23:49.527 Script: Active session: [1] y.nicolas.fasolo@download.yarix.com
+< 2022-06-15 09:23:49.527 Script: Terminated by user.
+. 2022-06-15 09:23:49.528 Script: Exit code: 1
+. 2022-06-15 09:23:49.535 Disconnected from server
+. 2022-06-15 09:31:48.416 --------------------------------------------------------------------------
+. 2022-06-15 09:31:48.417 WinSCP Version 5.20.3 RC (Build 12378 2022-05-17) (OS 10.0.19044 - Windows 10 Enterprise)
+. 2022-06-15 09:31:48.417 Configuration: nul
+. 2022-06-15 09:31:48.417 Log level: Normal
+. 2022-06-15 09:31:48.417 Local account: YARIX\y.nicolas.fasolo
+. 2022-06-15 09:31:48.417 Working directory: C:\GitHub\IR_AUTOMATED_Ecosystem\vel64_Yarix_Advanced
+. 2022-06-15 09:31:48.417 Process ID: 11620
+. 2022-06-15 09:31:48.425 Ancestor processes: WinSCP, powershell, cmd, explorer, ...
+. 2022-06-15 09:31:48.426 Command-line: "C:\GitHub\IR_AUTOMATED_Ecosystem\vel64_Yarix_Advanced\tools\WinSCP.exe" /console=5.20.3 /consoleinstance=_1924_96 "/log=.\WinSCP.log" "/ini=nul" "/command" "open ftp://y.nicolas.fasolo:***@download.yarix.com/" "lcd C:\" "cd /" "put PC-Nicolas.zip" "exit"
+. 2022-06-15 09:31:48.426 Time zone: Current: GMT+2, Standard: GMT+1 (ora solare Europa occidentale), DST: GMT+2 (ora legale Europa occidentale), DST Start: 27/03/2022, DST End: 30/10/2022
+. 2022-06-15 09:31:48.426 Login time: mercoledì 15 giugno 2022 09:31:48
+. 2022-06-15 09:31:48.426 --------------------------------------------------------------------------
+. 2022-06-15 09:31:48.426 Script: Retrospectively logging previous script records:
+> 2022-06-15 09:31:48.426 Script: open ftp://y.nicolas.fasolo:***@download.yarix.com/
+. 2022-06-15 09:31:48.426 --------------------------------------------------------------------------
+. 2022-06-15 09:31:48.426 Session name: y.nicolas.fasolo@download.yarix.com (Ad-Hoc site)
+. 2022-06-15 09:31:48.426 Host name: download.yarix.com (Port: 21)
+. 2022-06-15 09:31:48.426 User name: y.nicolas.fasolo (Password: Yes, Key file: No, Passphrase: No)
+. 2022-06-15 09:31:48.426 Transfer Protocol: FTP
+. 2022-06-15 09:31:48.426 Ping type: Dummy, Ping interval: 30 sec; Timeout: 15 sec
+. 2022-06-15 09:31:48.426 Disable Nagle: No
+. 2022-06-15 09:31:48.426 Proxy: None
+. 2022-06-15 09:31:48.426 Send buffer: 262144
+. 2022-06-15 09:31:48.426 UTF: Auto
+. 2022-06-15 09:31:48.426 FTPS: None [Client certificate: No]
+. 2022-06-15 09:31:48.426 FTP: Passive: Yes [Force IP: Auto]; MLSD: Auto [List all: Auto]; HOST: Auto
+. 2022-06-15 09:31:48.426 Local directory: default, Remote directory: home, Update: Yes, Cache: Yes
+. 2022-06-15 09:31:48.426 Cache directory changes: Yes, Permanent: Yes
+. 2022-06-15 09:31:48.426 Recycle bin: Delete to: No, Overwritten to: No, Bin path: 
+. 2022-06-15 09:31:48.426 Timezone offset: 0h 0m
+. 2022-06-15 09:31:48.426 --------------------------------------------------------------------------
+< 2022-06-15 09:31:48.446 Script: Connecting to download.yarix.com ...
+. 2022-06-15 09:31:48.446 Connecting to download.yarix.com ...
+. 2022-06-15 09:31:48.473 Connected with download.yarix.com. Waiting for welcome message...
+< 2022-06-15 09:31:48.488 220-FileZilla Server 0.9.60 beta
+< 2022-06-15 09:31:48.488 220 Welcome to Yarix FTP Server
+> 2022-06-15 09:31:48.488 USER y.nicolas.fasolo
+< 2022-06-15 09:31:48.506 331 Password required for y.nicolas.fasolo
+> 2022-06-15 09:31:48.506 PASS ****************
+< 2022-06-15 09:31:48.522 230 Logged on
+> 2022-06-15 09:31:48.522 SYST
+. 2022-06-15 09:31:48.540 FileZilla server detected.
+< 2022-06-15 09:31:48.540 215 UNIX emulated by FileZilla
+> 2022-06-15 09:31:48.541 FEAT
+< 2022-06-15 09:31:48.556 211-Features:
+< 2022-06-15 09:31:48.556  MDTM
+< 2022-06-15 09:31:48.556  REST STREAM
+< 2022-06-15 09:31:48.556  SIZE
+< 2022-06-15 09:31:48.556  MLST type*;size*;modify*;
+< 2022-06-15 09:31:48.556  MLSD
+< 2022-06-15 09:31:48.556  AUTH SSL
+< 2022-06-15 09:31:48.556  AUTH TLS
+< 2022-06-15 09:31:48.556  PROT
+< 2022-06-15 09:31:48.556  PBSZ
+< 2022-06-15 09:31:48.556  UTF8
+< 2022-06-15 09:31:48.556  CLNT
+< 2022-06-15 09:31:48.556  MFMT
+< 2022-06-15 09:31:48.556  EPSV
+< 2022-06-15 09:31:48.556  EPRT
+< 2022-06-15 09:31:48.557 211 End
+> 2022-06-15 09:31:48.557 CLNT WinSCP-release-5.20.3
+< 2022-06-15 09:31:48.571 200 Don't care
+> 2022-06-15 09:31:48.571 OPTS UTF8 ON
+< 2022-06-15 09:31:48.586 202 UTF8 mode is always enabled. No need to send this command.
+< 2022-06-15 09:31:48.586 Script: Connected
+. 2022-06-15 09:31:48.587 Connected
+. 2022-06-15 09:31:48.587 --------------------------------------------------------------------------
+. 2022-06-15 09:31:48.587 Using FTP protocol.
+. 2022-06-15 09:31:48.587 Doing startup conversation with host.
+< 2022-06-15 09:31:48.587 Script: Starting the session...
+> 2022-06-15 09:31:48.589 PWD
+< 2022-06-15 09:31:48.604 257 "/" is current directory.
+. 2022-06-15 09:31:48.604 Getting current directory name.
+. 2022-06-15 09:31:48.604 Startup conversation with host finished.
+< 2022-06-15 09:31:48.604 Script: Session started.
+< 2022-06-15 09:31:48.605 Script: Active session: [1] y.nicolas.fasolo@download.yarix.com
+> 2022-06-15 09:31:48.606 Script: lcd C:\
+< 2022-06-15 09:31:48.606 Script: C:\
+> 2022-06-15 09:31:48.607 Script: cd /
+. 2022-06-15 09:31:48.607 Changing directory to "/".
+> 2022-06-15 09:31:48.608 CWD /
+< 2022-06-15 09:31:48.624 250 CWD successful. "/" is current directory.
+. 2022-06-15 09:31:48.624 Getting current directory name.
+> 2022-06-15 09:31:48.625 PWD
+< 2022-06-15 09:31:48.642 257 "/" is current directory.
+< 2022-06-15 09:31:48.642 Script: /
+> 2022-06-15 09:31:48.644 Script: put PC-Nicolas.zip
+. 2022-06-15 09:31:48.644 Copying 1 files/directories to remote directory "/" - total size: 202.492.094
+. 2022-06-15 09:31:48.644   PrTime: Yes; PrRO: No; Rght: rw-r--r--; PrR: No (No); FnCs: N; RIC: 0100; Resume: S (102400); CalcS: No; Mask: 
+. 2022-06-15 09:31:48.644   TM: B; ClAr: No; RemEOF: No; RemBOM: No; CPS: 0; NewerOnly: No; EncryptNewFiles: Yes; ExcludeHiddenFiles: No; ExcludeEmptyDirectories: No; InclM: ; ResumeL: 0
+. 2022-06-15 09:31:48.644   AscM: *.*html; *.htm; *.txt; *.php; *.php3; *.cgi; *.c; *.cpp; *.h; *.pas; *.bas; *.tex; *.pl; *.js; .htaccess; *.xtml; *.css; *.cfg; *.ini; *.sh; *.xml
+. 2022-06-15 09:31:48.645 File: 'PC-NICOLAS.zip' [2022-06-15T07:31:38.263Z] [202492094]
+. 2022-06-15 09:31:48.647 Copying "PC-NICOLAS.zip" to remote directory started.
+. 2022-06-15 09:31:48.647 Binary transfer mode selected.
+. 2022-06-15 09:31:48.647 Starting upload of C:\PC-NICOLAS.zip
+> 2022-06-15 09:31:48.647 TYPE I
+< 2022-06-15 09:31:48.661 200 Type set to I
+> 2022-06-15 09:31:48.661 PASV
+< 2022-06-15 09:31:48.676 227 Entering Passive Mode (212,19,102,132,234,113)
+> 2022-06-15 09:31:48.677 STOR PC-NICOLAS.zip
+. 2022-06-15 09:31:48.677 Connecting to 212.19.102.132:60017 ...
+< 2022-06-15 09:31:48.709 150 Opening data channel for file upload to server of "/PC-NICOLAS.zip"
+. 2022-06-15 09:31:49.708 Increasing send buffer from 262144 to 524288
+< 2022-06-15 09:32:01.128 226 Successfully transferred "/PC-NICOLAS.zip"
+> 2022-06-15 09:32:01.129 MFMT 20220615073138 PC-NICOLAS.zip
+< 2022-06-15 09:32:01.143 213 modify=20220615073138; /PC-NICOLAS.zip
+. 2022-06-15 09:32:01.143 Upload successful
+. 2022-06-15 09:32:01.145 Transfer done: 'PC-NICOLAS.zip' => '/PC-NICOLAS.zip' [202492094]
+. 2022-06-15 09:32:01.146 Copying finished: Transferred: 202.492.094, Elapsed: 0:00:12, CPS: 16.196.776/s
+> 2022-06-15 09:32:01.146 Script: exit
+. 2022-06-15 09:32:01.147 Script: Exit code: 0
+. 2022-06-15 09:32:01.154 Disconnected from server
+. 2022-06-15 10:04:26.122 --------------------------------------------------------------------------
+. 2022-06-15 10:04:26.123 WinSCP Version 5.20.3 RC (Build 12378 2022-05-17) (OS 10.0.19044 - Windows 10 Enterprise)
+. 2022-06-15 10:04:26.123 Configuration: nul
+. 2022-06-15 10:04:26.123 Log level: Normal
+. 2022-06-15 10:04:26.123 Local account: YARIX\y.nicolas.fasolo
+. 2022-06-15 10:04:26.123 Working directory: C:\GitHub\IR_AUTOMATED_Ecosystem\vel64_Yarix_Advanced
+. 2022-06-15 10:04:26.123 Process ID: 6516
+. 2022-06-15 10:04:26.132 Ancestor processes: WinSCP, powershell, cmd, explorer, ...
+. 2022-06-15 10:04:26.132 Command-line: "C:\GitHub\IR_AUTOMATED_Ecosystem\vel64_Yarix_Advanced\tools\WinSCP.exe" /console=5.20.3 /consoleinstance=_9632_888 "/log=.\WinSCP.log" "/ini=nul" "/command" "open ftp://y.nicolas.fasolo:***@download.yarix.com/" "lcd C:\" "cd /" "put PC-Nicolas.zip" "exit"
+. 2022-06-15 10:04:26.132 Time zone: Current: GMT+2, Standard: GMT+1 (ora solare Europa occidentale), DST: GMT+2 (ora legale Europa occidentale), DST Start: 27/03/2022, DST End: 30/10/2022
+. 2022-06-15 10:04:26.133 Login time: mercoledì 15 giugno 2022 10:04:26
+. 2022-06-15 10:04:26.133 --------------------------------------------------------------------------
+. 2022-06-15 10:04:26.133 Script: Retrospectively logging previous script records:
+> 2022-06-15 10:04:26.133 Script: open ftp://y.nicolas.fasolo:***@download.yarix.com/
+. 2022-06-15 10:04:26.133 --------------------------------------------------------------------------
+. 2022-06-15 10:04:26.133 Session name: y.nicolas.fasolo@download.yarix.com (Ad-Hoc site)
+. 2022-06-15 10:04:26.133 Host name: download.yarix.com (Port: 21)
+. 2022-06-15 10:04:26.133 User name: y.nicolas.fasolo (Password: Yes, Key file: No, Passphrase: No)
+. 2022-06-15 10:04:26.133 Transfer Protocol: FTP
+. 2022-06-15 10:04:26.133 Ping type: Dummy, Ping interval: 30 sec; Timeout: 15 sec
+. 2022-06-15 10:04:26.133 Disable Nagle: No
+. 2022-06-15 10:04:26.133 Proxy: None
+. 2022-06-15 10:04:26.133 Send buffer: 262144
+. 2022-06-15 10:04:26.133 UTF: Auto
+. 2022-06-15 10:04:26.133 FTPS: None [Client certificate: No]
+. 2022-06-15 10:04:26.133 FTP: Passive: Yes [Force IP: Auto]; MLSD: Auto [List all: Auto]; HOST: Auto
+. 2022-06-15 10:04:26.133 Local directory: default, Remote directory: home, Update: Yes, Cache: Yes
+. 2022-06-15 10:04:26.133 Cache directory changes: Yes, Permanent: Yes
+. 2022-06-15 10:04:26.133 Recycle bin: Delete to: No, Overwritten to: No, Bin path: 
+. 2022-06-15 10:04:26.133 Timezone offset: 0h 0m
+. 2022-06-15 10:04:26.133 --------------------------------------------------------------------------
+< 2022-06-15 10:04:26.147 Script: Connecting to download.yarix.com ...
+. 2022-06-15 10:04:26.147 Connecting to download.yarix.com ...
+. 2022-06-15 10:04:26.223 Connected with download.yarix.com. Waiting for welcome message...
+< 2022-06-15 10:04:26.238 220-FileZilla Server 0.9.60 beta
+< 2022-06-15 10:04:26.238 220 Welcome to Yarix FTP Server
+> 2022-06-15 10:04:26.238 USER y.nicolas.fasolo
+< 2022-06-15 10:04:26.254 331 Password required for y.nicolas.fasolo
+> 2022-06-15 10:04:26.254 PASS ****************
+< 2022-06-15 10:04:26.269 230 Logged on
+> 2022-06-15 10:04:26.269 SYST
+. 2022-06-15 10:04:26.283 FileZilla server detected.
+< 2022-06-15 10:04:26.283 215 UNIX emulated by FileZilla
+> 2022-06-15 10:04:26.283 FEAT
+< 2022-06-15 10:04:26.298 211-Features:
+< 2022-06-15 10:04:26.298  MDTM
+< 2022-06-15 10:04:26.298  REST STREAM
+< 2022-06-15 10:04:26.298  SIZE
+< 2022-06-15 10:04:26.298  MLST type*;size*;modify*;
+< 2022-06-15 10:04:26.298  MLSD
+< 2022-06-15 10:04:26.298  AUTH SSL
+< 2022-06-15 10:04:26.298  AUTH TLS
+< 2022-06-15 10:04:26.298  PROT
+< 2022-06-15 10:04:26.298  PBSZ
+< 2022-06-15 10:04:26.298  UTF8
+< 2022-06-15 10:04:26.298  CLNT
+< 2022-06-15 10:04:26.298  MFMT
+< 2022-06-15 10:04:26.298  EPSV
+< 2022-06-15 10:04:26.298  EPRT
+< 2022-06-15 10:04:26.298 211 End
+> 2022-06-15 10:04:26.298 CLNT WinSCP-release-5.20.3
+< 2022-06-15 10:04:26.321 200 Don't care
+> 2022-06-15 10:04:26.321 OPTS UTF8 ON
+< 2022-06-15 10:04:26.336 202 UTF8 mode is always enabled. No need to send this command.
+< 2022-06-15 10:04:26.336 Script: Connected
+. 2022-06-15 10:04:26.338 Connected
+. 2022-06-15 10:04:26.338 --------------------------------------------------------------------------
+. 2022-06-15 10:04:26.338 Using FTP protocol.
+. 2022-06-15 10:04:26.338 Doing startup conversation with host.
+< 2022-06-15 10:04:26.338 Script: Starting the session...
+> 2022-06-15 10:04:26.339 PWD
+< 2022-06-15 10:04:26.353 257 "/" is current directory.
+. 2022-06-15 10:04:26.353 Getting current directory name.
+. 2022-06-15 10:04:26.353 Startup conversation with host finished.
+< 2022-06-15 10:04:26.353 Script: Session started.
+< 2022-06-15 10:04:26.353 Script: Active session: [1] y.nicolas.fasolo@download.yarix.com
+> 2022-06-15 10:04:26.353 Script: lcd C:\
+< 2022-06-15 10:04:26.353 Script: C:\
+> 2022-06-15 10:04:26.353 Script: cd /
+. 2022-06-15 10:04:26.354 Changing directory to "/".
+> 2022-06-15 10:04:26.354 CWD /
+< 2022-06-15 10:04:26.369 250 CWD successful. "/" is current directory.
+. 2022-06-15 10:04:26.369 Getting current directory name.
+> 2022-06-15 10:04:26.369 PWD
+< 2022-06-15 10:04:26.384 257 "/" is current directory.
+< 2022-06-15 10:04:26.384 Script: /
+> 2022-06-15 10:04:26.384 Script: put PC-Nicolas.zip
+. 2022-06-15 10:04:26.384 Copying 1 files/directories to remote directory "/" - total size: 123.374.271
+. 2022-06-15 10:04:26.384   PrTime: Yes; PrRO: No; Rght: rw-r--r--; PrR: No (No); FnCs: N; RIC: 0100; Resume: S (102400); CalcS: No; Mask: 
+. 2022-06-15 10:04:26.384   TM: B; ClAr: No; RemEOF: No; RemBOM: No; CPS: 0; NewerOnly: No; EncryptNewFiles: Yes; ExcludeHiddenFiles: No; ExcludeEmptyDirectories: No; InclM: ; ResumeL: 0
+. 2022-06-15 10:04:26.384   AscM: *.*html; *.htm; *.txt; *.php; *.php3; *.cgi; *.c; *.cpp; *.h; *.pas; *.bas; *.tex; *.pl; *.js; .htaccess; *.xtml; *.css; *.cfg; *.ini; *.sh; *.xml
+. 2022-06-15 10:04:26.384 File: 'PC-NICOLAS.zip' [2022-06-15T08:02:31.597Z] [123374271]
+. 2022-06-15 10:04:26.385 Copying "PC-NICOLAS.zip" to remote directory started.
+. 2022-06-15 10:04:26.385 Binary transfer mode selected.
+. 2022-06-15 10:04:26.385 Starting upload of C:\PC-NICOLAS.zip
+> 2022-06-15 10:04:26.385 TYPE I
+< 2022-06-15 10:04:26.400 200 Type set to I
+> 2022-06-15 10:04:26.400 PASV
+< 2022-06-15 10:04:26.414 227 Entering Passive Mode (212,19,102,132,235,235)
+> 2022-06-15 10:04:26.415 STOR PC-NICOLAS.zip
+. 2022-06-15 10:04:26.415 Connecting to 212.19.102.132:60395 ...
+< 2022-06-15 10:04:26.444 150 Opening data channel for file upload to server of "/PC-NICOLAS.zip"
+. 2022-06-15 10:04:27.441 Increasing send buffer from 262144 to 524288
+. 2022-06-15 10:04:28.445 Increasing send buffer from 524288 to 1048576
+< 2022-06-15 10:04:33.124 226 Successfully transferred "/PC-NICOLAS.zip"
+> 2022-06-15 10:04:33.125 MFMT 20220615080231 PC-NICOLAS.zip
+< 2022-06-15 10:04:33.141 213 modify=20220615080231; /PC-NICOLAS.zip
+. 2022-06-15 10:04:33.141 Upload successful
+. 2022-06-15 10:04:33.143 Transfer done: 'PC-NICOLAS.zip' => '/PC-NICOLAS.zip' [123374271]
+. 2022-06-15 10:04:33.143 Copying finished: Transferred: 123.374.271, Elapsed: 0:00:06, CPS: 18.253.332/s
+> 2022-06-15 10:04:33.143 Script: exit
+. 2022-06-15 10:04:33.143 Script: Exit code: 0
+. 2022-06-15 10:04:33.149 Disconnected from server
