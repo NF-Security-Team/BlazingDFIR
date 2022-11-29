@@ -1,0 +1,1 @@
+start .\tools\autorunsc.exe -a * -c -h -s -o "C:\DFIR\AutorunsReport.csv" -nobanner -accepteula -z *
